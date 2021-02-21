@@ -1,26 +1,14 @@
-import PropTypes from 'prop-types'
-import Button from './Button'
+import { AppBar, Toolbar } from "@material-ui/core";
+import React from "react";
 
-const Header = (props) => {
-
-    const onClick = () => {
-        console.log('Click')
-    }
-
-    return (
-        <header className='header'>
-            <h1>{props.title}</h1>
-            <Button color='blue' text='Register' onClick = {onClick}/>
-        </header>
-    )
+export default function Header() {
+  const displayDesktop = () => {
+    return <Toolbar>Hi From Desktop Header</Toolbar>;
+  };
+  
+  return (
+    <header>
+      <AppBar>{displayDesktop()}</AppBar>
+    </header>
+  );
 }
-
-Header.defaultProps = {
-    title: 'Task Tracker'
-}
-
-Header.propTypes = {
-    title: PropTypes.string
-}
-
-export default Header
